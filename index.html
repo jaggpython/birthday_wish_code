@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎁 Birthday Surprise</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ff5f6d,#ffc371,#6c63ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    padding:20px;
+    transition:.6s;
+}
+
+/* ---------- Start Screen ---------- */
+
+#start{
+    text-align:center;
+}
+
+#giftBtn{
+    width:180px;
+    height:180px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#fff;
+    font-size:90px;
+    transition:.35s;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+#giftBtn:hover{
+    transform:scale(1.08) rotate(-3deg);
+}
+
+#start h2{
+    color:#fff;
+    margin-top:25px;
+    font-size:30px;
+}
+
+#start p{
+    color:#fff;
+    margin-top:10px;
+    opacity:.9;
+}
+
+/* ---------- Card ---------- */
+
+#card{
+    display:none;
+    width:100%;
+    max-width:720px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(14px);
+    border-radius:24px;
+    padding:45px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    animation:showCard .8s ease;
+}
+
+#card h1{
+    font-size:52px;
+    margin-bottom:18px;
+}
+
+#card h2{
+    font-size:34px;
+    color:#ffe66d;
+    margin-bottom:25px;
+}
+
+#card p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.cake{
+    font-size:85px;
+    margin-bottom:20px;
+}
+
+.footer{
+    font-size:18px;
+    color:#fff4c4;
+}
+
+/* ---------- Balloons ---------- */
+
+.balloon{
+    position:fixed;
+    bottom:-100px;
+    font-size:42px;
+    display:none;
+    pointer-events:none;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+@keyframes showCard{
+    from{
+        opacity:0;
+        transform:scale(.6);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    body{
+        align-items:flex-start;
+        padding:20px 15px;
+    }
+
+    #giftBtn{
+        width:150px;
+        height:150px;
+        font-size:75px;
+    }
+
+    #start h2{
+        font-size:24px;
+    }
+
+    #card{
+        padding:30px 22px;
+        margin-top:10px;
+    }
+
+    #card h1{
+        font-size:36px;
+        line-height:1.3;
+    }
+
+    #card h2{
+        font-size:25px;
+    }
+
+    #card p{
+        font-size:17px;
+        line-height:1.7;
+    }
+
+    .cake{
+        font-size:65px;
+    }
+
+    .footer{
+        font-size:16px;
+    }
+
+    .balloon{
+        font-size:30px;
+    }
+}
+
+@media(max-width:480px){
+
+    #giftBtn{
+        width:130px;
+        height:130px;
+        font-size:65px;
+    }
+
+    #start h2{
+        font-size:22px;
+    }
+
+    #start p{
+        font-size:15px;
+    }
+
+    #card{
+        padding:24px 18px;
+    }
+
+    #card h1{
+        font-size:30px;
+    }
+
+    #card h2{
+        font-size:22px;
+    }
+
+    #card p{
+        font-size:16px;
+    }
+
+    .cake{
+        font-size:55px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div id="start">
+    <button id="giftBtn" onclick="openGift()">🎁</button>
+
+    <h2>Birthday Surprise</h2>
+
+    <p>Tap the gift to open it.</p>
+</div>
+
+<div id="card">
+
+    <div class="cake">🎂</div>
+
+    <h1>🎉 Happy Birthday! 🎉</h1>
+
+    <h2>Dear My Friend ❤️</h2>
+
+    <p>
+        Wishing you a day filled with happiness, laughter, love, and unforgettable memories.
+        May this new year of your life bring good health, success, peace, and endless joy.
+        Keep smiling, keep shining, and enjoy every moment of your special day.
+    </p>
+
+    <h2>🥳 Have an Amazing Birthday! 🎈</h2>
+
+    <div class="footer">
+        ✨ May all your dreams come true. ✨
+    </div>
+
+</div>
+
+<!-- Balloons -->
+<div class="balloon" style="left:5%;animation-duration:8s;">🎈</div>
+<div class="balloon" style="left:18%;animation-duration:10s;">🎈</div>
+<div class="balloon" style="left:32%;animation-duration:9s;">🎈</div>
+<div class="balloon" style="left:46%;animation-duration:11s;">🎈</div>
+<div class="balloon" style="left:60%;animation-duration:8.5s;">🎈</div>
+<div class="balloon" style="left:74%;animation-duration:10.5s;">🎈</div>
+<div class="balloon" style="left:88%;animation-duration:9.5s;">🎈</div>
+
+<script>
+
+function openGift(){
+
+    document.getElementById("giftBtn").innerHTML="🎊";
+
+    setTimeout(function(){
+
+        document.getElementById("start").style.display="none";
+
+        document.getElementById("card").style.display="block";
+
+        document.body.style.background=
+        "linear-gradient(135deg,#ff006e,#8338ec,#3a86ff)";
+
+        document.querySelectorAll(".balloon").forEach(function(balloon){
+            balloon.style.display="block";
+        });
+
+        if(navigator.vibrate){
+            navigator.vibrate([200,100,200]);
+        }
+
+    },600);
+
+}
+
+</script>
+
+</body>
+</html>
